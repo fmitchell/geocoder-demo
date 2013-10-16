@@ -4,12 +4,12 @@ require 'vendor/autoload.php';
 
 // Setup geocoder.
 $adapter = new \Geocoder\HttpAdapter\CurlHttpAdapter();
-$geocoder = new \Geocoder\Geocoder();
 $chain = new \Geocoder\Provider\ChainProvider(
     array(
         new \Geocoder\Provider\GoogleMapsProvider($adapter),
     )
 );
+$geocoder = new \Geocoder\Geocoder();
 $geocoder->registerProvider($chain);
 
 // Demo locations
@@ -100,7 +100,6 @@ function markerCreator($lat, $long, $label, $key) {
     var map = L.map('map');
 
     L.tileLayer('//{s}.tile.cloudmade.com/41339be4c5064686b781a5a00678de62/998/256/{z}/{x}/{y}.png', {
-        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery Â© <a href="http://cloudmade.com">CloudMade</a>',
         maxZoom: 18
     }).addTo(map);
 
