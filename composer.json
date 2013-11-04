@@ -1,5 +1,5 @@
 {
     "require": {
-        "willdurand/geocoder": "2.3.1"
+        "willdurand/geocoder": "~2.3"
     }
 }
